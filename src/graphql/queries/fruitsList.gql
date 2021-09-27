@@ -1,0 +1,9 @@
+#import "@/graphql/fragments/fruit.gql"
+
+query fruitsList($filter: FruitFilter) {
+  fruitsList(filter: $filter) {
+    items {
+      ...FruitFragment
+    }
+  }
+}

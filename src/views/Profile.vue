@@ -5,6 +5,7 @@
     <div v-if="user">
       <p>ID: {{ user.id }}</p>
       <p>EMAIL: {{ user.email }}</p>
+      <p>FRUITS: {{ fruits }}</p>
     </div>
 
     <span v-else>Loading...</span>
@@ -15,9 +16,13 @@
 import { api } from "@/8base";
 import { CURRENT_USER_QUERY } from "@/utils/graphql";
 import { useFruitSubscription } from "@/composables/useFruit.js";
+import { useFruitsQuery } from "@/composables/useFruit.js";
 
 export default {
   setup() {
+    // Fruits Query API
+    const { fruits } = useFruitsQuery();
+
     // Fruit Subscription API
     const { result } = useFruitSubscription({
       filter: {
@@ -26,6 +31,11 @@ export default {
     });
 
     console.log({ result });
+
+    return {
+      // States
+      fruits
+    };
   },
 
   data() {
