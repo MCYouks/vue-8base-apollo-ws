@@ -104,7 +104,7 @@ const actions = {
         mutation: USER_SIGN_UP_MUTATION,
         variables: {
           user: {
-            email: authResult.email,
+            email: authResult.email
           },
           authProfileId: process.env.VUE_APP_AUTH_PROFILE_ID
         },
