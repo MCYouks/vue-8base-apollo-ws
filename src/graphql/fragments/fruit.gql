@@ -1,0 +1,5 @@
+fragment FruitFragment on Fruit {
+  id
+  name
+  color
+}

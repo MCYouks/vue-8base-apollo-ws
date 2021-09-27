@@ -1,0 +1,9 @@
+subscription fruitSubscription($filter: FruitSubscriptionFilter) {
+  Fruit(filter: $filter) {
+    node {
+      id
+      name
+      color
+    }
+  }
+}

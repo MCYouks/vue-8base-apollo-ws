@@ -14,8 +14,16 @@
 <script>
 import { api } from "@/8base";
 import { CURRENT_USER_QUERY } from "@/utils/graphql";
+import { useFruitSubscription } from "@/composables/useFruit.js";
 
 export default {
+  setup() {
+    // Fruit Subscription API
+    const { result } = useFruitSubscription();
+
+    console.log({ result });
+  },
+
   data() {
     return {
       user: undefined
@@ -25,11 +33,13 @@ export default {
     /**
      * Queryies the authenticated users information from 8base.
      */
-    api.query({
-      query: CURRENT_USER_QUERY
-    }).then(resp => {
-      this.user = resp.data.user  
-    });
+    api
+      .query({
+        query: CURRENT_USER_QUERY
+      })
+      .then(resp => {
+        this.user = resp.data.user;
+      });
   }
 };
 </script>
