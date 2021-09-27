@@ -36,9 +36,11 @@ export default {
   },
   mounted() {
     if (this.authenticated) {
-      api.query({
-        query: RANDOM_QUERY
-      }).then(resp => (this.data = resp.data));
+      api
+        .query({
+          query: RANDOM_QUERY
+        })
+        .then(resp => (this.data = resp.data));
     }
   }
 };
