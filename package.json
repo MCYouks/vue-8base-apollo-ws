@@ -1,5 +1,5 @@
 {
-  "name": "vuejs-todos-app",
+  "name": "vue-apollo-ws",
   "version": "0.1.0",
   "private": true,
   "scripts": {
