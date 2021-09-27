@@ -19,7 +19,11 @@ import { useFruitSubscription } from "@/composables/useFruit.js";
 export default {
   setup() {
     // Fruit Subscription API
-    const { result } = useFruitSubscription();
+    const { result } = useFruitSubscription({
+      filter: {
+        mutation_in: ["create", "update"]
+      }
+    });
 
     console.log({ result });
   },

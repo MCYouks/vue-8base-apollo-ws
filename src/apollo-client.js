@@ -35,7 +35,7 @@ const wsLink = new WebSocketLink({
     reconnect: true,
     connectionParams: () => ({
       workspaceId: process.env.VUE_APP_WORKSPACE_ID,
-      token: `Bearer ${store.state.session.idToken}`
+      token: store.state.session.idToken
     })
   },
   webSocketImpl: class WebSocketWithoutProtocol extends WebSocket {
